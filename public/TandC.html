@@ -1,0 +1,313 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Terms & Conditions — Found Lost</title>
+    <style>
+        :root {
+            --bg: #f7fafc;
+            --card: #ffffff;
+            --muted: #6b7280;
+            --accent: #0f766e;
+            --accent-contrast: #ffffff;
+            --maxw: 900px;
+            --radius: 12px;
+            --glass: rgba(255, 255, 255, 0.6);
+        }
+
+        html,
+        body {
+            height: 100%;
+        }
+
+        body {
+            margin: 0;
+            font-family: Inter, ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+            background: linear-gradient(180deg, #eef2ff 0%, #f7fafc 100%);
+            color: #111827;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+            display: flex;
+            align-items: flex-start;
+            justify-content: center;
+            padding: 40px 20px;
+            box-sizing: border-box;
+        }
+
+        .container {
+            width: 100%;
+            max-width: var(--maxw);
+            background: var(--card);
+            border-radius: var(--radius);
+            box-shadow: 0 10px 30px rgba(2, 6, 23, 0.08);
+            overflow: hidden;
+            border: 1px solid rgba(15, 23, 42, 0.04);
+        }
+
+        header {
+            padding: 28px 32px;
+            background: linear-gradient(90deg, rgba(15, 118, 110, 0.08), rgba(79, 70, 229, 0.03));
+            display: flex;
+            gap: 16px;
+            align-items: center;
+        }
+
+        .logo {
+            width: 56px;
+            height: 56px;
+            border-radius: 12px;
+            background: linear-gradient(135deg, var(--accent), #4f46e5);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--accent-contrast);
+            font-weight: 700;
+            font-size: 18px;
+            box-shadow: 0 6px 18px rgba(15, 118, 110, 0.12);
+        }
+
+        h1 {
+            font-size: 20px;
+            margin: 0;
+        }
+
+        p.lead {
+            margin: 4px 0 0;
+            color: var(--muted);
+            font-size: 13px
+        }
+
+        main {
+            padding: 28px 32px;
+            line-height: 1.6;
+        }
+
+        h2 {
+            font-size: 16px;
+            margin-top: 20px;
+            color: #0f172a
+        }
+
+        h3 {
+            font-size: 14px;
+            margin-top: 14px
+        }
+
+        ul {
+            margin: 8px 0 16px 20px
+        }
+
+        li {
+            margin: 6px 0
+        }
+
+        .meta {
+            display: flex;
+            gap: 10px;
+            align-items: center;
+            color: var(--muted);
+            font-size: 13px
+        }
+
+        .badge {
+            padding: 6px 10px;
+            border-radius: 999px;
+            background: var(--glass);
+            font-weight: 600;
+            color: var(--muted);
+        }
+
+        footer {
+            padding: 20px 32px;
+            border-top: 1px solid rgba(2, 6, 23, 0.04);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 8px
+        }
+
+        a.cta {
+            background: var(--accent);
+            color: var(--accent-contrast);
+            padding: 10px 14px;
+            border-radius: 10px;
+            text-decoration: none;
+            font-weight: 600
+        }
+
+        /* Accessibility & print */
+        @media (prefers-color-scheme:dark) {
+            :root {
+                --bg: #071024;
+                --card: #07172a;
+                --muted: #9ca3af
+            }
+
+            body {
+                background: linear-gradient(180deg, #071428 0%, #07172a 100%);
+                color: #e6eef6
+            }
+        }
+
+        @media print {
+            body {
+                padding: 0;
+                background: #fff
+            }
+
+            header,
+            footer {
+                display: none
+            }
+
+            .container {
+                box-shadow: none;
+                border-radius: 0;
+                border: 0
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container" role="main">
+        <header>
+            <div class="logo">FL</div>
+            <div>
+                <h1>Terms &amp; Conditions — Found Lost</h1>
+                <p class="lead">Last updated: <strong id="lastUpdated">DD/MM/YYYY</strong></p>
+            </div>
+        </header>
+
+        <main>
+            <section>
+                <p>Welcome to <strong>Found Lost</strong> — a platform that helps users report, search for, and claim
+                    lost or found items. By accessing or using this website or mobile application (the "Service"), you
+                    agree to be bound by these Terms &amp; Conditions. If you do not agree, please do not use the
+                    Service.</p>
+            </section>
+
+            <h2>1. Definitions</h2>
+            <ul>
+                <li><strong>Platform/Service</strong> — Found Lost website and/or mobile application.</li>
+                <li><strong>User(s)</strong> — anyone who accesses or uses the Platform.</li>
+                <li><strong>Lost Item</strong> — an item reported missing by a User.</li>
+                <li><strong>Found Item</strong> — an item reported discovered by a User.</li>
+                <li><strong>Claimant</strong> — a User attempting to claim a listed item.</li>
+            </ul>
+
+            <h2>2. Eligibility</h2>
+            <p>To use the Service you must be at least <strong>13 years old</strong> (or older if local law requires).
+                If you use the Service on behalf of an organization, you warrant that you have authority to bind that
+                organization to these Terms.</p>
+
+            <h2>3. User Responsibilities</h2>
+            <ul>
+                <li>Provide accurate and truthful information when reporting or claiming items.</li>
+                <li>Do not list illegal, dangerous, or prohibited items.</li>
+                <li>Respect other Users — do not harass, impersonate, or defraud anyone.</li>
+                <li>You are responsible for verifying ownership and for any offline exchange or transfer of items.</li>
+            </ul>
+
+            <h2>4. Reporting Lost or Found Items</h2>
+            <h3>4.1 Accuracy</h3>
+            <p>Users must provide clear and factual details about items. False or fraudulent reports are strictly
+                prohibited and may result in account suspension.</p>
+
+            <h3>4.2 Ownership Verification</h3>
+            <p>Found Lost does not independently verify ownership. Claimants may be asked by item owners to provide
+                proof such as photographs, receipts, serial numbers, or other unique identifiers. Final verification is
+                between the Users involved.</p>
+
+            <h3>4.3 Prohibited Listings</h3>
+            <p>Do not list:</p>
+            <ul>
+                <li>Weapons, illegal drugs, or contraband.</li>
+                <li>Sensitive personal documents (e.g., identity documents) without redaction.</li>
+                <li>Any items that violate local or international law.</li>
+            </ul>
+
+            <h2>5. Communication Between Users</h2>
+            <p>The Platform may facilitate messaging between Users. You agree to communicate respectfully and not to
+                request or transmit sensitive personal data. Found Lost is not responsible for interactions between
+                Users.</p>
+
+            <h2>6. Platform Limitations</h2>
+            <ul>
+                <li>Found Lost does not guarantee recovery of lost items.</li>
+                <li>The Platform does not verify every listing or claim.</li>
+                <li>Found Lost is not liable for fraudulent or incorrect information posted by Users.</li>
+                <li>The Platform does not mediate or resolve disputes between Users.</li>
+            </ul>
+
+            <h2>7. Privacy &amp; Data Usage</h2>
+            <p>We collect data necessary to operate the Service, such as contact details, item descriptions and photos,
+                device information, and location data when permitted. We use this information to provide and improve the
+                Service and to prevent fraud. We do not sell your personal data. See our separate Privacy Policy for
+                details.</p>
+
+            <h2>8. Intellectual Property</h2>
+            <p>All branding, design, and code of Found Lost are the intellectual property of the platform. Users must
+                not copy or redistribute proprietary content or reverse-engineer the Service.</p>
+
+            <h2>9. User Content Rights</h2>
+            <p>By uploading content (images, descriptions) you grant Found Lost a non-exclusive, worldwide, royalty-free
+                license to host, display, and store that content for the purpose of operating the Service. You retain
+                ownership of your content.</p>
+
+            <h2>10. Account Suspension &amp; Termination</h2>
+            <p>We may suspend or terminate accounts for violations, fraudulent activity, abuse, or legal reasons. Users
+                may delete their account at any time through account settings.</p>
+
+            <h2>11. Limitation of Liability</h2>
+            <p>To the extent permitted by law, Found Lost is not liable for any direct, indirect, incidental,
+                consequential, or special damages arising from use of the Service, loss of items, or disputes between
+                Users. The Service is provided "as is" without warranties of any kind.</p>
+
+            <h2>12. Changes to These Terms</h2>
+            <p>We may update these Terms occasionally. Continued use after updates indicates acceptance. We will make
+                reasonable efforts to notify Users about material changes.</p>
+
+            <h2>13. Governing Law</h2>
+            <p>These Terms are governed by the laws of <strong>India</strong> (or replace with your jurisdiction). Any
+                disputes will be resolved in courts located in <strong>[Your City/State]</strong>.</p>
+
+            <h2>14. Contact</h2>
+            <p>For support or inquiries: <br>
+                Email: <a href="mailto:inocreal.web@gmail.com">support@foundlost.com</a><br>
+                Website: <a href="index.html">inocreal.web@gmail.com</a>
+            </p>
+
+            <section
+                style="margin-top:18px; padding:12px; background:linear-gradient(180deg,rgba(15,118,110,0.04), transparent); border-radius:10px;">
+                <strong>Need other documents?</strong>
+                <p style="margin:6px 0 0; color:var(--muted);">I can also generate a Privacy Policy, Refund Policy,
+                    Disclaimer, HTML print-ready version, or export this file as PDF/DOCX.</p>
+            </section>
+
+        </main>
+
+        <footer>
+            <div class="meta"><span class="badge">Found Lost</span><span>Terms &amp; Conditions</span></div>
+            <div style="display:flex; gap:8px; align-items:center">
+                <a class="cta" href="mailto:inocreal.web@gmail.com">Contact Support</a>
+                <small style="color:var(--muted)">Last updated: <strong id="footerDate">25/11/2025</strong></small>
+            </div>
+        </footer>
+    </div>
+    <script>
+        // Replace placeholder dates with today's date in DD/MM/YYYY format
+        (function () {
+            const pad = (n) => n < 10 ? ('0' + n) : n;
+            const d = new Date();
+            const dateStr = pad(d.getDate()) + '/' + pad(d.getMonth() + 1) + '/' + d.getFullYear();
+            document.getElementById('lastUpdated').textContent = dateStr;
+            document.getElementById('footerDate').textContent = dateStr;
+        })();
+    </script>
+</body>
+
+</html>
