@@ -640,7 +640,13 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Initialize
     populateTimePicker();
-    initMapPicker();
+
+    // Fix Map Initialization
+    setTimeout(() => {
+        initMapPicker();
+        if (pickerMap) pickerMap.invalidateSize();
+    }, 500);
+
     initItemsMap();
 
     // Initialize Flatpickr (Calendar)
@@ -656,10 +662,12 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Set default time (e.g., 12:00)
     setTimeout(() => {
-        hourScroll.scrollTop = 12 * 40;
-        minuteScroll.scrollTop = 0;
-        updateTimeInput();
-    }, 100);
+        if (hourScroll && minuteScroll) {
+            hourScroll.scrollTop = 12 * 40;
+            minuteScroll.scrollTop = 0;
+            updateTimeInput();
+        }
+    }, 500);
 
     // Initial Load
     fetchItems();
