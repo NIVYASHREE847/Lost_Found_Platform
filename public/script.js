@@ -545,7 +545,22 @@ document.addEventListener('DOMContentLoaded', () => {
     // Toggle Picker
     timeDisplay.addEventListener('click', (e) => {
         e.stopPropagation();
+        const wasActive = timePickerContainer.classList.contains('active');
         timePickerContainer.classList.toggle('active');
+
+        if (!wasActive) {
+            // Picker is opening, set scroll position
+            setTimeout(() => {
+                // Default to 12:00 if not set, or parse current value
+                let [h, m] = timeInput.value.split(':').map(Number);
+                if (isNaN(h)) h = 12;
+                if (isNaN(m)) m = 0;
+
+                hourScroll.scrollTop = h * 40;
+                minuteScroll.scrollTop = m * 40;
+                updateTimeInput();
+            }, 50); // Small delay to allow display:flex to apply
+        }
     });
 
     // Close Picker on Outside Click
@@ -556,6 +571,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     function populateTimePicker() {
+        // ... (existing code) ...
         // Padding for top
         hourScroll.innerHTML = '<div class="time-item"></div>';
         minuteScroll.innerHTML = '<div class="time-item"></div>';
@@ -643,9 +659,13 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Fix Map Initialization
     setTimeout(() => {
-        initMapPicker();
-        if (pickerMap) pickerMap.invalidateSize();
-    }, 500);
+        if (!pickerMap) {
+            initMapPicker();
+        }
+        if (pickerMap) {
+            pickerMap.invalidateSize();
+        }
+    }, 1000); // Increased timeout to ensure rendering
 
     initItemsMap();
 
@@ -659,15 +679,6 @@ document.addEventListener('DOMContentLoaded', () => {
             // Optional: Add sound or effect here too
         }
     });
-
-    // Set default time (e.g., 12:00)
-    setTimeout(() => {
-        if (hourScroll && minuteScroll) {
-            hourScroll.scrollTop = 12 * 40;
-            minuteScroll.scrollTop = 0;
-            updateTimeInput();
-        }
-    }, 500);
 
     // Initial Load
     fetchItems();
