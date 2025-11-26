@@ -659,11 +659,20 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Fix Map Initialization
     setTimeout(() => {
-        if (!pickerMap) {
-            initMapPicker();
-        }
-        if (pickerMap) {
-            pickerMap.invalidateSize();
+        try {
+            if (typeof L === 'undefined') {
+                throw new Error('Leaflet library not loaded');
+            }
+
+            if (!pickerMap) {
+                initMapPicker();
+            }
+            if (pickerMap) {
+                pickerMap.invalidateSize();
+            }
+        } catch (error) {
+            console.error('Map initialization error:', error);
+            showNotification('Map failed to load: ' + error.message, 'error');
         }
     }, 1000); // Increased timeout to ensure rendering
 
