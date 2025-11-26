@@ -40,7 +40,9 @@ const db = mysql.createConnection({
     host: process.env.DB_HOST || 'localhost',
     user: process.env.DB_USER || 'root',
     password: process.env.DB_PASSWORD || '',
-    database: process.env.DB_NAME || 'lost_found_db'
+    database: process.env.DB_NAME || 'lost_found_db',
+    port: process.env.DB_PORT || 3306,
+    ssl: process.env.DB_SSL === 'true' ? { rejectUnauthorized: false } : undefined
 });
 
 db.connect(err => {
@@ -65,18 +67,23 @@ const transporter = nodemailer.createTransport({
 const multer = require('multer');
 const fs = require('fs');
 
-// Configure Multer for local storage
-const storage = multer.diskStorage({
-    destination: (req, file, cb) => {
-        const dir = 'public/uploads';
-        if (!fs.existsSync(dir)) {
-            fs.mkdirSync(dir, { recursive: true });
-        }
-        cb(null, dir);
+const cloudinary = require('cloudinary').v2;
+const { CloudinaryStorage } = require('multer-storage-cloudinary');
+
+// Configure Cloudinary
+cloudinary.config({
+    cloud_name: process.env.CLOUDINARY_CLOUD_NAME,
+    api_key: process.env.CLOUDINARY_API_KEY,
+    api_secret: process.env.CLOUDINARY_API_SECRET
+});
+
+// Configure Multer for Cloudinary storage
+const storage = new CloudinaryStorage({
+    cloudinary: cloudinary,
+    params: {
+        folder: 'lost_found_platform',
+        allowed_formats: ['jpg', 'png', 'jpeg', 'webp'],
     },
-    filename: (req, file, cb) => {
-        cb(null, Date.now() + '-' + file.originalname);
-    }
 });
 
 const upload = multer({ storage: storage });
@@ -101,7 +108,7 @@ app.post('/api/items', upload.single('image'), (req, res) => {
     // Construct image URL from uploaded file
     let image_url = '';
     if (req.file) {
-        image_url = '/uploads/' + req.file.filename;
+        image_url = req.file.path; // Cloudinary URL
     } else {
         image_url = 'https://via.placeholder.com/300x200?text=No+Image';
     }
