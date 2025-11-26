@@ -162,29 +162,43 @@
             <div class="search-container">
                 <i class="fas fa-search search-icon"></i>
                 <input type="text" id="item-search" placeholder="Search for items, locations, or details...">
-                <!-- Contact Modal -->
-                <div id="contact-modal" class="modal-overlay">
-                    <div class="modal-content">
-                        <button class="modal-close"><i class="fas fa-times"></i></button>
-                        <div class="modal-header">
-                            <i class="fas fa-address-card"></i>
-                            <h3>Contact Information</h3>
-                        </div>
-                        <div class="modal-body">
-                            <p>You are viewing contact info for:</p>
-                            <h4 id="modal-item-name">Item Name</h4>
-                            <div class="contact-display">
-                                <span id="modal-contact-info">email@example.com</span>
-                                <button id="copy-contact-btn" title="Copy to Clipboard">
-                                    <i class="far fa-copy"></i>
-                                </button>
-                            </div>
-                        </div>
-                        <div class="modal-footer">
-                            <p>Please be safe when meeting strangers.</p>
+            </div>
+
+            <!-- Items Grid -->
+            <div id="items-grid" class="items-grid">
+                <!-- Items will be populated by JavaScript -->
+            </div>
+
+            <!-- Items Map (hidden by default) -->
+            <div id="items-map"
+                style="display: none; height: 500px; width: 100%; margin-top: 20px; border-radius: 10px;"></div>
+
+            <!-- Notification Area -->
+            <div id="notification-area"></div>
+
+            <!-- Contact Modal -->
+            <div id="contact-modal" class="modal-overlay">
+                <div class="modal-content">
+                    <button class="modal-close"><i class="fas fa-times"></i></button>
+                    <div class="modal-header">
+                        <i class="fas fa-address-card"></i>
+                        <h3>Contact Information</h3>
+                    </div>
+                    <div class="modal-body">
+                        <p>You are viewing contact info for:</p>
+                        <h4 id="modal-item-name">Item Name</h4>
+                        <div class="contact-display">
+                            <span id="modal-contact-info">email@example.com</span>
+                            <button id="copy-contact-btn" title="Copy to Clipboard">
+                                <i class="far fa-copy"></i>
+                            </button>
                         </div>
                     </div>
+                    <div class="modal-footer">
+                        <p>Please be safe when meeting strangers.</p>
+                    </div>
                 </div>
+            </div>
             </div>
         </section>
     </main>
